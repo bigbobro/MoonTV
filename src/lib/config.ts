@@ -401,7 +401,7 @@ async function initConfig() {
         Users: [],
         Groups: [],
       },
-      SourceConfig: Object.entries(fileConfig.api_site).map(([key, site]) => ({
+      SourceConfig: Object.entries(fileConfig.api_site || {}).map(([key, site]) => ({
         key,
         name: site.name,
         api: site.api,

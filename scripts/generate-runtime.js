@@ -18,7 +18,8 @@ try {
     try {
       config = JSON.parse(configContent);
     } catch (err) {
-      console.error("解析 config.json 失败");
+      console.error("解析 config.json 失败:", err.message);
+      process.exit(1);
     }
   } else {
     console.warn("⚠️ 未找到 config.json 文件");
